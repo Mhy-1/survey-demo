@@ -1,0 +1,214 @@
+{
+  "adminDashboard": {
+    "title": "Admin Dashboard",
+    "subtitle": "Manage Surveys and Analytics",
+    "loading": "Loading surveys...",
+    "error": "An error occurred while loading surveys. Please try again.",
+    "newSurvey": "New Survey",
+    "creating": "Creating...",
+    "confirmDelete": "Are you sure you want to delete this survey?",
+    "confirmClose": "Are you sure you want to close this survey? This action cannot be undone.",
+    "quickActions": {
+      "title": "Quick Actions",
+      "description": "Quick access to main features"
+    },
+    "stats": {
+      "totalSurveys": "Total Surveys",
+      "activeSurveys": "Active Surveys",
+      "totalResponses": "Total Responses",
+      "completionRate": "Completion Rate",
+      "clients": "Clients",
+      "fromLastMonth": "from last month",
+      "activeClients": "external clients",
+      "allTime": "all working normally"
+    },
+    "buttons": {
+      "createSurvey": "Create Survey",
+      "export": "Export",
+      "advancedSettings": "Survey Settings"
+    },
+    "status": {
+      "active": "Active",
+      "draft": "Draft",
+      "paused": "Paused",
+      "closed": "Closed",
+      "unknown": "Unknown"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "surveys": "Surveys",
+      "responses": "Responses",
+      "clients": "Clients",
+      "users": "Users",
+      "settings": "Settings"
+    },
+    "recentSurveys": {
+      "title": "Recent Surveys",
+      "description": "Last created surveys"
+    },
+    "monthlyStats": {
+      "title": "This Month's Statistics",
+      "description": "Compared to last month",
+      "newResponses": "New Responses",
+      "activeSurveys": "Active Surveys",
+      "completionRate": "Participation Rate"
+    },
+    "surveys": {
+      "title": "Survey Management",
+      "description": "View and manage all surveys",
+      "selectAll": "Select All",
+      "searchPlaceholder": "Smart search: survey title, description, client name...",
+      "responses": "response",
+      "createdOn": "Created on"
+    },
+    "filters": {
+      "all": "All",
+      "byClient": "Filter by Client",
+      "allClients": "All Clients"
+    },
+    "surveyType": {
+      "internal": "Internal",
+      "external": "External"
+    },
+    "actions": {
+      "view": "View Survey",
+      "edit": "Edit Survey",
+      "share": "Share Survey",
+      "analytics": "View Analytics",
+      "duplicate": "Duplicate Survey",
+      "delete": "Delete Survey"
+    },
+    "export": {
+      "selectOne": "You must select at least one survey to export",
+      "adminOnly": "Excel export is available for admins only",
+      "csv": "Export CSV",
+      "excel": "Export Excel (Admin Only)",
+      "pdf": "Export PDF",
+      "selectedCount": "Selected files",
+      "successMessage": "Exported {{count}} responses in {{format}} format!",
+      "clientsExported": "Exported {{count}} clients in {{format}} format!",
+      "anonymous": "Anonymous",
+      "csvHeaders": {
+        "survey": "Survey",
+        "respondent": "Respondent",
+        "status": "Status",
+        "date": "Submission Date",
+        "name": "Name",
+        "company": "Company",
+        "email": "Email",
+        "surveys": "Number of Surveys",
+        "rating": "Average Rating"
+      }
+    },
+    "sampleSurvey": {
+      "title": "Employee Satisfaction Survey",
+      "description": "Survey to measure employee satisfaction with provided services"
+    },
+    "sharing": {
+      "tab": "Sharing",
+      "title": "Share Survey",
+      "chooseDescription": "Choose the survey you want to share",
+      "selectSurvey": "Select a survey to share",
+      "selectDescription": "You must select a survey first to create a sharing link and QR Code",
+      "availableSurveys": "Available Surveys",
+      "selectPlaceholder": "Choose a survey to share",
+      "changeSurvey": "Change Survey",
+      "emailSent": "Survey link sent via email",
+      "socialShared": "Survey shared on social media",
+      "linkCopied": "Survey link copied to clipboard",
+      "embedCopied": "Embed code copied to clipboard",
+      "success": "Survey shared successfully"
+    }
+  },
+  "advancedDashboard": {
+    "title": "Advanced Admin Dashboard",
+    "subtitle": "Welcome {{name}}, here's a comprehensive overview of system management",
+    "backButton": "Back to Main Dashboard",
+    "createSurvey": "Create New Survey",
+    "creating": "Creating...",
+
+    "tabs": {
+      "overview": "Overview",
+      "employees": "Employees",
+      "responses": "Responses",
+      "statistics": "Statistics",
+      "activity": "Activity Log",
+      "notifications": "Notifications",
+      "configuration": "Configuration",
+      "backup": "Backup & Restore",
+      "system": "System"
+    },
+
+    "stats": {
+      "totalEmployees": "Total Employees",
+      "managers": "Managers",
+      "surveys": "Surveys",
+      "activeSurveys": "active survey",
+      "responses": "Responses",
+      "responseRate": "response rate",
+      "newThisWeek": "this week"
+    },
+
+    "recentActivity": {
+      "title": "Recent Activity",
+      "description": "Latest system activities",
+      "by": "by"
+    },
+
+    "systemStatus": {
+      "title": "System Status",
+      "description": "Technical performance indicators",
+      "security": "Security",
+      "secure": "Secure",
+      "uptime": "Uptime",
+      "lastBackup": "Last Backup",
+      "storage": "Storage",
+      "of": "of"
+    },
+
+    "systemTab": {
+      "title": "System Management",
+      "description": "System management and maintenance tools",
+      "security": {
+        "title": "Security",
+        "status": "Security Status",
+        "lastCheck": "Last Check",
+        "twoHoursAgo": "2 hours ago",
+        "checkSecurity": "Check Security"
+      },
+      "backups": {
+        "title": "Backups",
+        "lastBackup": "Last Backup",
+        "size": "Backup Size",
+        "sizeValue": "1.2 GB",
+        "create": "Create Backup"
+      },
+      "performance": {
+        "title": "Performance",
+        "uptime": "Uptime",
+        "serverResponse": "Server Response",
+        "responseTime": "45ms",
+        "check": "Check Performance"
+      },
+      "storage": {
+        "title": "Storage",
+        "used": "Used",
+        "available": "Available",
+        "availableValue": "7.7 GB",
+        "cleanup": "Cleanup Storage"
+      }
+    }
+  },
+
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "import": "Import"
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "adminDashboard": {
+    "title": "لوحة المدير",
+    "subtitle": "إدارة الاستطلاعات والتحليلات",
+    "loading": "جاري تحميل الاستطلاعات...",
+    "error": "حدث خطأ في تحميل الاستطلاعات. يرجى المحاولة مرة أخرى.",
+    "newSurvey": "استطلاع جديد",
+    "creating": "جاري الإنشاء...",
+    "confirmDelete": "هل أنت متأكد من حذف هذا الاستطلاع؟",
+    "confirmClose": "هل أنت متأكد من إغلاق هذا الاستطلاع؟ لا يمكن التراجع عن هذا الإجراء.",
+    "quickActions": {
+      "title": "إجراءات سريعة",
+      "description": "الوصول السريع للميزات الرئيسية"
+    },
+    "stats": {
+      "totalSurveys": "إجمالي الاستطلاعات",
+      "activeSurveys": "الاستطلاعات النشطة",
+      "totalResponses": "إجمالي الردود",
+      "completionRate": "معدل الإكمال",
+      "clients": "العملاء",
+      "fromLastMonth": "من الشهر الماضي",
+      "activeClients": "عملاء خارجيون",
+      "allTime": "جميعها تعمل بشكل طبيعي"
+    },
+    "buttons": {
+      "createSurvey": "إنشاء استطلاع",
+      "export": "تصدير",
+      "advancedSettings": "إعدادات الاستطلاعات"
+    },
+    "status": {
+      "active": "نشط",
+      "draft": "مسودة",
+      "paused": "متوقف",
+      "closed": "مغلق",
+      "unknown": "غير محدد"
+    },
+    "tabs": {
+      "overview": "نظرة عامة",
+      "surveys": "الاستطلاعات",
+      "responses": "الردود",
+      "clients": "العملاء",
+      "users": "المستخدمين",
+      "settings": "الإعدادات"
+    },
+    "recentSurveys": {
+      "title": "الاستطلاعات الأخيرة",
+      "description": "آخر الاستطلاعات التي تم إنشاؤها"
+    },
+    "monthlyStats": {
+      "title": "إحصائيات هذا الشهر",
+      "description": "مقارنة مع الشهر الماضي",
+      "newResponses": "الردود الجديدة",
+      "activeSurveys": "الاستطلاعات النشطة",
+      "completionRate": "معدل المشاركة"
+    },
+    "surveys": {
+      "title": "إدارة الاستطلاعات",
+      "description": "عرض وإدارة جميع الاستطلاعات",
+      "selectAll": "تحديد الكل",
+      "searchPlaceholder": "بحث ذكي: عنوان الاستطلاع، الوصف، اسم العميل...",
+      "responses": "رد",
+      "createdOn": "أنشئ في"
+    },
+    "filters": {
+      "all": "الكل",
+      "byClient": "فلترة حسب العميل",
+      "allClients": "جميع العملاء"
+    },
+    "surveyType": {
+      "internal": "داخلي",
+      "external": "خارجي"
+    },
+    "actions": {
+      "view": "عرض الاستطلاع",
+      "edit": "تحرير الاستطلاع",
+      "share": "مشاركة الاستطلاع",
+      "analytics": "عرض التحليلات",
+      "duplicate": "تكرار الاستطلاع",
+      "delete": "حذف الاستطلاع"
+    },
+    "export": {
+      "selectOne": "يجب اختيار استطلاع واحد على الأقل للتصدير",
+      "adminOnly": "تصدير Excel متاح للمدراء فقط",
+      "csv": "تصدير CSV",
+      "excel": "تصدير Excel (مدير فقط)",
+      "pdf": "تصدير PDF",
+      "selectedCount": "عدد الملفات المحددة",
+      "successMessage": "تم تصدير {{count}} رد بصيغة {{format}}!",
+      "clientsExported": "تم تصدير {{count}} عميل بصيغة {{format}}!",
+      "anonymous": "مجهول",
+      "csvHeaders": {
+        "survey": "الاستطلاع",
+        "respondent": "المستجيب",
+        "status": "الحالة",
+        "date": "تاريخ الإرسال",
+        "name": "الاسم",
+        "company": "الشركة",
+        "email": "البريد الإلكتروني",
+        "surveys": "عدد الاستطلاعات",
+        "rating": "متوسط التقييم"
+      }
+    },
+    "sampleSurvey": {
+      "title": "استطلاع رضا الموظفين",
+      "description": "استطلاع لقياس رضا الموظفين عن الخدمات المقدمة"
+    },
+    "sharing": {
+      "tab": "المشاركة",
+      "title": "مشاركة الاستطلاع",
+      "chooseDescription": "اختر الاستطلاع الذي تريد مشاركته",
+      "selectSurvey": "اختر استطلاع للمشاركة",
+      "selectDescription": "يجب اختيار استطلاع واحد أولاً لإنشاء رابط المشاركة و QR Code",
+      "availableSurveys": "الاستطلاعات المتاحة",
+      "selectPlaceholder": "اختر استطلاع للمشاركة",
+      "changeSurvey": "تغيير الاستطلاع",
+      "emailSent": "تم إرسال رابط الاستطلاع عبر البريد الإلكتروني",
+      "socialShared": "تم مشاركة الاستطلاع على وسائل التواصل الاجتماعي",
+      "linkCopied": "تم نسخ رابط الاستطلاع إلى الحافظة",
+      "embedCopied": "تم نسخ كود التضمين إلى الحافظة",
+      "success": "تم مشاركة الاستطلاع بنجاح"
+    }
+  },
+  "advancedDashboard": {
+    "title": "لوحة الإدارة المتقدمة",
+    "subtitle": "مرحباً {{name}}، إليك نظرة شاملة على إدارة النظام",
+    "backButton": "العودة للوحة الرئيسية",
+    "createSurvey": "إنشاء استطلاع جديد",
+    "creating": "جاري الإنشاء...",
+
+    "tabs": {
+      "overview": "نظرة عامة",
+      "employees": "الموظفون",
+      "responses": "الردود",
+      "statistics": "الإحصائيات",
+      "activity": "سجل الأنشطة",
+      "notifications": "الإشعارات",
+      "configuration": "الإعدادات",
+      "backup": "النسخ الاحتياطي",
+      "system": "النظام"
+    },
+
+    "stats": {
+      "totalEmployees": "إجمالي الموظفين",
+      "managers": "المديرون",
+      "surveys": "الاستطلاعات",
+      "activeSurveys": "استطلاع نشط",
+      "responses": "الردود",
+      "responseRate": "معدل الاستجابة",
+      "newThisWeek": "هذا الأسبوع"
+    },
+
+    "recentActivity": {
+      "title": "النشاط الأخير",
+      "description": "آخر الأنشطة في النظام",
+      "by": "بواسطة"
+    },
+
+    "systemStatus": {
+      "title": "حالة النظام",
+      "description": "مؤشرات الأداء التقنية",
+      "security": "الأمان",
+      "secure": "آمن",
+      "uptime": "وقت التشغيل",
+      "lastBackup": "آخر نسخة احتياطية",
+      "storage": "التخزين",
+      "of": "من"
+    },
+
+    "systemTab": {
+      "title": "إدارة النظام",
+      "description": "أدوات إدارة النظام والصيانة",
+      "security": {
+        "title": "الأمان",
+        "status": "حالة الأمان",
+        "lastCheck": "آخر فحص",
+        "twoHoursAgo": "منذ ساعتين",
+        "checkSecurity": "فحص الأمان"
+      },
+      "backups": {
+        "title": "النسخ الاحتياطية",
+        "lastBackup": "آخر نسخة",
+        "size": "حجم النسخة",
+        "sizeValue": "1.2 GB",
+        "create": "إنشاء نسخة احتياطية"
+      },
+      "performance": {
+        "title": "الأداء",
+        "uptime": "وقت التشغيل",
+        "serverResponse": "استجابة الخادم",
+        "responseTime": "45ms",
+        "check": "فحص الأداء"
+      },
+      "storage": {
+        "title": "التخزين",
+        "used": "المستخدم",
+        "available": "المتاح",
+        "availableValue": "7.7 GB",
+        "cleanup": "تنظيف التخزين"
+      }
+    }
+  },
+
+  "common": {
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "close": "إغلاق",
+    "search": "بحث",
+    "filter": "تصفية",
+    "export": "تصدير",
+    "import": "استيراد"
+  }
+}
