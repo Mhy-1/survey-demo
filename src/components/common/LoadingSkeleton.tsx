@@ -5,7 +5,7 @@ export function TableSkeleton({ rows = 5 }: { rows?: number }) {
   return (
     <div className="space-y-3">
       {Array.from({ length: rows }).map((_, i) => (
-        <div key={i} className="flex items-center space-x-4 p-4 border rounded-lg">
+        <div key={i} className="flex items-center space-x-4 rtl:space-x-reverse p-4 border rounded-lg">
           <Skeleton className="h-12 w-12 rounded-full" />
           <div className="flex-1 space-y-2">
             <Skeleton className="h-4 w-[250px]" />
@@ -40,7 +40,7 @@ export function ListSkeleton({ items = 5 }: { items?: number }) {
   return (
     <div className="space-y-3">
       {Array.from({ length: items }).map((_, i) => (
-        <div key={i} className="flex items-center space-x-3">
+        <div key={i} className="flex items-center space-x-3 rtl:space-x-reverse">
           <Skeleton className="h-10 w-10 rounded" />
           <div className="flex-1 space-y-2">
             <Skeleton className="h-4 w-full" />
@@ -81,7 +81,7 @@ export function DashboardSkeleton() {
           <CardContent>
             <div className="space-y-3">
               {Array.from({ length: 3 }).map((_, i) => (
-                <div key={i} className="flex items-center space-x-3">
+                <div key={i} className="flex items-center space-x-3 rtl:space-x-reverse">
                   <Skeleton className="h-12 w-12 rounded" />
                   <div className="flex-1 space-y-2">
                     <Skeleton className="h-4 w-full" />
@@ -129,7 +129,7 @@ export function SurveyCardSkeleton({ count = 3 }: { count?: number }) {
                 <Skeleton className="h-4 w-[120px]" />
                 <Skeleton className="h-4 w-[40px]" />
               </div>
-              <div className="flex items-center space-x-2 mt-4">
+              <div className="flex items-center space-x-2 rtl:space-x-reverse mt-4">
                 <Skeleton className="h-9 w-[80px]" />
                 <Skeleton className="h-9 w-[80px]" />
               </div>
@@ -148,21 +148,21 @@ export function UserListSkeleton({ count = 5 }: { count?: number }) {
         <Card key={i}>
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4 flex-1">
+              <div className="flex items-center space-x-4 rtl:space-x-reverse flex-1">
                 <Skeleton className="h-12 w-12 rounded-full" />
                 <div className="flex-1 space-y-2">
-                  <div className="flex items-center space-x-2">
+                  <div className="flex items-center space-x-2 rtl:space-x-reverse">
                     <Skeleton className="h-4 w-[150px]" />
                     <Skeleton className="h-5 w-[60px] rounded-full" />
                     <Skeleton className="h-5 w-[50px] rounded-full" />
                   </div>
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-4 rtl:space-x-reverse">
                     <Skeleton className="h-3 w-[180px]" />
                     <Skeleton className="h-3 w-[120px]" />
                   </div>
                 </div>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 rtl:space-x-reverse">
                 <Skeleton className="h-9 w-9" />
                 <Skeleton className="h-9 w-9" />
                 <Skeleton className="h-9 w-9" />
@@ -184,7 +184,7 @@ export function FormSkeleton() {
           <Skeleton className="h-10 w-full" />
         </div>
       ))}
-      <div className="flex justify-end space-x-2">
+      <div className="flex justify-end space-x-2 rtl:space-x-reverse">
         <Skeleton className="h-10 w-[100px]" />
         <Skeleton className="h-10 w-[100px]" />
       </div>

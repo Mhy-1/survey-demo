@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { 
-  FileText, 
+import {
+  FileText,
   Clock,
   CheckCircle,
   AlertCircle,
@@ -12,7 +13,7 @@ import {
   TrendingUp,
   Calendar
 } from 'lucide-react'
-import { formatDate, formatRelativeTime } from '@/lib/utils'
+import { formatDate } from '@/lib/utils'
 
 // Mock data - replace with actual API calls
 const mockAssignedSurveys = [
@@ -60,8 +61,9 @@ const mockStats = {
 }
 
 export default function EmployeeDashboard() {
-  const [assignedSurveys, setAssignedSurveys] = useState(mockAssignedSurveys)
-  const [stats, setStats] = useState(mockStats)
+  const { t } = useTranslation()
+  const [assignedSurveys] = useState(mockAssignedSurveys)
+  const [stats] = useState(mockStats)
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -81,15 +83,15 @@ export default function EmployeeDashboard() {
   const getStatusText = (status: string) => {
     switch (status) {
       case 'completed':
-        return 'مكتمل'
+        return t('employeeDashboard.status.completed')
       case 'in_progress':
-        return 'قيد التنفيذ'
+        return t('employeeDashboard.status.inProgress')
       case 'not_started':
-        return 'لم يبدأ'
+        return t('employeeDashboard.status.notStarted')
       case 'overdue':
-        return 'متأخر'
+        return t('employeeDashboard.status.overdue')
       default:
-        return 'غير محدد'
+        return t('employeeDashboard.status.unknown')
     }
   }
 
@@ -117,15 +119,15 @@ export default function EmployeeDashboard() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold">لوحة التحكم - الموظف</h1>
+          <h1 className="text-3xl font-bold">{t('employeeDashboard.title')}</h1>
           <p className="text-muted-foreground">
-            الاستطلاعات المخصصة لك
+            {t('employeeDashboard.subtitle')}
           </p>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center gap-2">
           <Button variant="outline">
-            <BarChart3 className="h-4 w-4 mr-2" />
-            عرض التقارير
+            <BarChart3 className="h-4 w-4 me-2" />
+            {t('employeeDashboard.viewReports')}
           </Button>
         </div>
       </div>
@@ -134,52 +136,52 @@ export default function EmployeeDashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">الاستطلاعات المخصصة</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('employeeDashboard.stats.assignedSurveys')}</CardTitle>
             <FileText className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.assigned_surveys}</div>
             <p className="text-xs text-muted-foreground">
-              {stats.pending_surveys} في الانتظار
+              {stats.pending_surveys} {t('employeeDashboard.stats.pending')}
             </p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">المكتملة</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('employeeDashboard.stats.completed')}</CardTitle>
             <CheckCircle className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.completed_surveys}</div>
             <p className="text-xs text-muted-foreground">
-              من أصل {stats.assigned_surveys}
+              {t('employeeDashboard.stats.outOf')} {stats.assigned_surveys}
             </p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">المتأخرة</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('employeeDashboard.stats.overdue')}</CardTitle>
             <AlertCircle className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.overdue_surveys}</div>
             <p className="text-xs text-muted-foreground">
-              تحتاج إلى إكمال
+              {t('employeeDashboard.stats.needsCompletion')}
             </p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">متوسط وقت الإكمال</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('employeeDashboard.stats.avgCompletionTime')}</CardTitle>
             <TrendingUp className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.average_completion_time}</div>
             <p className="text-xs text-muted-foreground">
-              لكل استطلاع
+              {t('employeeDashboard.stats.perSurvey')}
             </p>
           </CardContent>
         </Card>
@@ -188,9 +190,9 @@ export default function EmployeeDashboard() {
       {/* Assigned Surveys */}
       <Card>
         <CardHeader>
-          <CardTitle>الاستطلاعات المخصصة لك</CardTitle>
+          <CardTitle>{t('employeeDashboard.assignedSurveys.title')}</CardTitle>
           <CardDescription>
-            الاستطلاعات التي تحتاج إلى إكمالها
+            {t('employeeDashboard.assignedSurveys.description')}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -198,51 +200,51 @@ export default function EmployeeDashboard() {
             {assignedSurveys.map((survey) => {
               const overdue = isOverdue(survey.deadline)
               const currentStatus = overdue && survey.status !== 'completed' ? 'overdue' : survey.status
-              
+
               return (
                 <div
                   key={survey.id}
                   className="flex items-center justify-between p-4 border rounded-lg hover:bg-muted/50 transition-colors"
                 >
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center gap-4">
                     <div className="flex-shrink-0">
                       {getStatusIcon(currentStatus)}
                     </div>
                     <div className="flex-1">
-                      <div className="flex items-center space-x-2">
+                      <div className="flex items-center gap-2">
                         <h3 className="font-medium">{survey.title}</h3>
                         <Badge className={getStatusColor(currentStatus)}>
                           {getStatusText(currentStatus)}
                         </Badge>
                         {overdue && survey.status !== 'completed' && (
-                          <Badge variant="destructive">متأخر</Badge>
+                          <Badge variant="destructive">{t('employeeDashboard.status.overdue')}</Badge>
                         )}
                       </div>
                       <p className="text-sm text-muted-foreground mt-1">
                         {survey.description}
                       </p>
-                      <div className="flex items-center space-x-4 mt-2 text-xs text-muted-foreground">
+                      <div className="flex items-center gap-4 mt-2 text-xs text-muted-foreground">
                         <span className="flex items-center">
-                          <Users className="h-3 w-3 mr-1" />
+                          <Users className="h-3 w-3 me-1" />
                           {survey.department}
                         </span>
                         <span className="flex items-center">
-                          <Clock className="h-3 w-3 mr-1" />
+                          <Clock className="h-3 w-3 me-1" />
                           {survey.estimated_time}
                         </span>
                         <span className="flex items-center">
-                          <Calendar className="h-3 w-3 mr-1" />
-                          انتهاء: {formatDate(survey.deadline)}
+                          <Calendar className="h-3 w-3 me-1" />
+                          {t('employeeDashboard.deadline')}: {formatDate(survey.deadline)}
                         </span>
                       </div>
                       {survey.status === 'in_progress' && survey.progress && (
                         <div className="mt-2">
                           <div className="flex items-center justify-between text-xs text-muted-foreground mb-1">
-                            <span>التقدم</span>
+                            <span>{t('employeeDashboard.progress')}</span>
                             <span>{survey.progress}%</span>
                           </div>
                           <div className="w-full bg-gray-200 rounded-full h-2">
-                            <div 
+                            <div
                               className="bg-primary h-2 rounded-full transition-all duration-300"
                               style={{ width: `${survey.progress}%` }}
                             />
@@ -251,20 +253,20 @@ export default function EmployeeDashboard() {
                       )}
                     </div>
                   </div>
-                  <div className="flex items-center space-x-2">
+                  <div className="flex items-center gap-2">
                     {survey.status === 'completed' ? (
-                      <div className="text-right">
-                        <p className="text-sm text-green-600 font-medium">مكتمل</p>
+                      <div className="text-end">
+                        <p className="text-sm text-green-600 font-medium">{t('employeeDashboard.status.completed')}</p>
                         <p className="text-xs text-muted-foreground">
                           {formatDate(survey.completed_at || '')}
                         </p>
                       </div>
                     ) : (
-                      <Button 
+                      <Button
                         variant={currentStatus === 'overdue' ? 'destructive' : 'default'}
                         size="sm"
                       >
-                        {currentStatus === 'in_progress' ? 'متابعة' : 'بدء الاستطلاع'}
+                        {currentStatus === 'in_progress' ? t('employeeDashboard.continue') : t('employeeDashboard.startSurvey')}
                       </Button>
                     )}
                   </div>
@@ -276,9 +278,9 @@ export default function EmployeeDashboard() {
           {assignedSurveys.length === 0 && (
             <div className="text-center py-8">
               <FileText className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-lg font-medium mb-2">لا توجد استطلاعات</h3>
+              <h3 className="text-lg font-medium mb-2">{t('employeeDashboard.noSurveys.title')}</h3>
               <p className="text-muted-foreground">
-                لا توجد استطلاعات مخصصة لك حالياً
+                {t('employeeDashboard.noSurveys.description')}
               </p>
             </div>
           )}
@@ -288,9 +290,9 @@ export default function EmployeeDashboard() {
       {/* Completed Surveys */}
       <Card>
         <CardHeader>
-          <CardTitle>الاستطلاعات المكتملة</CardTitle>
+          <CardTitle>{t('employeeDashboard.completedSurveys.title')}</CardTitle>
           <CardDescription>
-            الاستطلاعات التي أكملتها مؤخراً
+            {t('employeeDashboard.completedSurveys.description')}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -302,17 +304,17 @@ export default function EmployeeDashboard() {
                   key={survey.id}
                   className="flex items-center justify-between p-4 border rounded-lg bg-green-50/50"
                 >
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center gap-4">
                     <CheckCircle className="h-5 w-5 text-green-600" />
                     <div>
                       <h3 className="font-medium">{survey.title}</h3>
                       <p className="text-sm text-muted-foreground">
-                        مكتمل في {formatDate(survey.completed_at || '')}
+                        {t('employeeDashboard.completedAt')} {formatDate(survey.completed_at || '')}
                       </p>
                     </div>
                   </div>
                   <Button variant="outline" size="sm">
-                    عرض التفاصيل
+                    {t('employeeDashboard.viewDetails')}
                   </Button>
                 </div>
               ))}

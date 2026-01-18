@@ -222,7 +222,9 @@ export default {
   },
   plugins: [
     require("tailwindcss-animate"),
-    function({ addUtilities }) {
+    // CSS Logical Properties Plugin for RTL support
+    function({ addUtilities, matchUtilities, theme }) {
+      // Static utilities
       const newUtilities = {
         '.rtl': {
           direction: 'rtl',
@@ -255,9 +257,68 @@ export default {
           '&::-webkit-scrollbar': {
             display: 'block'
           }
-        }
+        },
+        // Logical text alignment
+        '.text-start': {
+          textAlign: 'start',
+        },
+        '.text-end': {
+          textAlign: 'end',
+        },
       }
       addUtilities(newUtilities)
+
+      // Dynamic logical margin utilities (ms-*, me-*)
+      matchUtilities(
+        {
+          'ms': (value) => ({
+            marginInlineStart: value,
+          }),
+          'me': (value) => ({
+            marginInlineEnd: value,
+          }),
+        },
+        { values: theme('spacing') }
+      )
+
+      // Dynamic logical padding utilities (ps-*, pe-*)
+      matchUtilities(
+        {
+          'ps': (value) => ({
+            paddingInlineStart: value,
+          }),
+          'pe': (value) => ({
+            paddingInlineEnd: value,
+          }),
+        },
+        { values: theme('spacing') }
+      )
+
+      // Dynamic logical inset utilities (start-*, end-*)
+      matchUtilities(
+        {
+          'start': (value) => ({
+            insetInlineStart: value,
+          }),
+          'end': (value) => ({
+            insetInlineEnd: value,
+          }),
+        },
+        { values: theme('spacing') }
+      )
+
+      // Dynamic logical border utilities (border-s-*, border-e-*)
+      matchUtilities(
+        {
+          'border-s': (value) => ({
+            borderInlineStartWidth: value,
+          }),
+          'border-e': (value) => ({
+            borderInlineEndWidth: value,
+          }),
+        },
+        { values: theme('borderWidth') }
+      )
     }
   ],
 }

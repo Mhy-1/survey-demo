@@ -209,6 +209,123 @@
     "search": "Search",
     "filter": "Filter",
     "export": "Export",
-    "import": "Import"
+    "import": "Import",
+    "menu": "Menu",
+    "noData": "No data available",
+    "loading": "Loading...",
+    "actions": "Actions"
+  },
+
+  "footer": {
+    "copyright": "© M. Meshari Daajam",
+    "demoBadge": "Demo Version",
+    "allRightsReserved": "All rights reserved"
+  },
+
+  "errors": {
+    "loadingFailed": "Loading failed",
+    "tryAgain": "Try again",
+    "unexpectedError": "An unexpected error occurred",
+    "errorMessage": "We apologize for the inconvenience. An error occurred while loading this content.",
+    "tips": "Tips to resolve the issue:",
+    "refreshPage": "Try refreshing the page (F5)",
+    "clearCache": "Clear your browser cache",
+    "checkInternet": "Check your internet connection",
+    "contactSupport": "If the problem persists, contact support",
+    "goHome": "Go to Home"
+  },
+
+  "navigation": {
+    "systemSettings": "System Settings",
+    "assignedSurveys": "Assigned Surveys",
+    "employeeManagement": "Employee Management",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+
+  "roles": {
+    "admin": "Admin",
+    "manager": "Manager",
+    "employee": "Employee",
+    "unknown": "Unknown"
+  },
+
+  "dataTable": {
+    "search": "Search...",
+    "export": "Export",
+    "filter": "Filter",
+    "loading": "Loading...",
+    "noData": "No data available",
+    "showing": "Showing {{from}} to {{to}} of {{total}} items",
+    "page": "Page {{current}} of {{total}}"
+  },
+
+  "login": {
+    "demoBanner": {
+      "title": "Demo Mode",
+      "description": "This is a demonstration version with sample data. No backend server required."
+    },
+    "title": "AMSteel Survey Demo",
+    "subtitle": "Survey Management System",
+    "welcome": "Welcome",
+    "welcomeDescription": "Sign in with demo credentials to explore the system",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "signIn": "Sign In",
+    "signingIn": "Signing in...",
+    "noAccount": "Don't have an account?",
+    "createAccount": "Create account",
+    "demoCredentials": "Demo Credentials",
+    "adminAccount": "Admin Account",
+    "employeeAccount": "Employee Account",
+    "use": "Use",
+    "footer": "AMSteel Survey System Demo - For demonstration purposes only",
+    "invalidCredentials": "Invalid credentials. Please use demo credentials."
+  },
+
+  "employeeDashboard": {
+    "title": "Employee Dashboard",
+    "subtitle": "Surveys assigned to you",
+    "viewReports": "View Reports",
+    "stats": {
+      "assignedSurveys": "Assigned Surveys",
+      "pending": "pending",
+      "completed": "Completed",
+      "outOf": "out of",
+      "overdue": "Overdue",
+      "needsCompletion": "needs completion",
+      "avgCompletionTime": "Avg. Completion Time",
+      "perSurvey": "per survey"
+    },
+    "assignedSurveys": {
+      "title": "Assigned Surveys",
+      "description": "Surveys you need to complete"
+    },
+    "completedSurveys": {
+      "title": "Completed Surveys",
+      "description": "Surveys you recently completed"
+    },
+    "status": {
+      "completed": "Completed",
+      "inProgress": "In Progress",
+      "notStarted": "Not Started",
+      "overdue": "Overdue",
+      "unknown": "Unknown"
+    },
+    "progress": "Progress",
+    "deadline": "Deadline",
+    "completedAt": "Completed at",
+    "startSurvey": "Start Survey",
+    "continue": "Continue",
+    "viewDetails": "View Details",
+    "noSurveys": {
+      "title": "No Surveys",
+      "description": "No surveys assigned to you at this time"
+    }
   }
 }

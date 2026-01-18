@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { useAuthStore } from '@/store/authStore'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -32,6 +33,7 @@ interface HeaderProps {
 }
 
 export default function Header({ className }: HeaderProps) {
+  const { t } = useTranslation()
   const { user, logout } = useAuthStore()
   const navigate = useNavigate()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -55,26 +57,17 @@ export default function Header({ className }: HeaderProps) {
   }
 
   const getRoleText = (role: string) => {
-    switch (role) {
-      case 'admin':
-        return 'مدير'
-      case 'manager':
-        return 'مشرف'
-      case 'employee':
-        return 'موظف'
-      default:
-        return 'غير محدد'
-    }
+    return t(`roles.${role}`, t('roles.unknown'))
   }
 
   return (
     <header className={cn("sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60", className)}>
       <div className="container flex h-16 items-center justify-between">
         {/* Logo and Navigation */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center gap-4">
           <Link
             to={user?.role === 'admin' ? '/admin/dashboard' : user?.role === 'manager' ? '/admin/dashboard' : user?.role === 'employee' ? '/employee/dashboard' : '/login'}
-            className="flex items-center space-x-2"
+            className="flex items-center gap-2"
           >
             <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
               <FileText className="h-5 w-5 text-primary-foreground" />
@@ -83,30 +76,30 @@ export default function Header({ className }: HeaderProps) {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center gap-6">
             {user?.role === 'admin' && (
               <Link
                 to="/developer/system-config"
-                className="flex items-center space-x-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Settings className="h-4 w-4" />
-                <span>إعدادات النظام</span>
+                <span>{t('navigation.systemSettings')}</span>
               </Link>
             )}
             {user?.role === 'employee' && (
-              <Link 
-                to="/employee/dashboard" 
-                className="flex items-center space-x-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              <Link
+                to="/employee/dashboard"
+                className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 <FileText className="h-4 w-4" />
-                <span>الاستطلاعات المخصصة</span>
+                <span>{t('navigation.assignedSurveys')}</span>
               </Link>
             )}
           </nav>
         </div>
 
         {/* User Menu */}
-        <div className="flex items-center space-x-2 rtl:space-x-reverse">
+        <div className="flex items-center gap-2">
           {/* Theme Toggle */}
           <ThemeToggle />
 
@@ -114,9 +107,9 @@ export default function Header({ className }: HeaderProps) {
           <DirectionToggle />
 
           {/* Notifications */}
-          <Button variant="ghost" size="icon" className="relative">
+          <Button variant="ghost" size="icon" className="relative" aria-label="Notifications">
             <Bell className="h-5 w-5" />
-            <span className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full animate-pulse"></span>
+            <span className="absolute -top-1 -end-1 h-3 w-3 bg-red-500 rounded-full animate-pulse"></span>
           </Button>
 
           {/* User Dropdown */}
@@ -145,20 +138,20 @@ export default function Header({ className }: HeaderProps) {
               <DropdownMenuSeparator />
               <DropdownMenuItem asChild>
                 <Link to="/profile" className="flex items-center">
-                  <User className="mr-2 h-4 w-4" />
-                  <span>الملف الشخصي</span>
+                  <User className="me-2 h-4 w-4" />
+                  <span>{t('navigation.profile')}</span>
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
                 <Link to="/settings" className="flex items-center">
-                  <Settings className="mr-2 h-4 w-4" />
-                  <span>الإعدادات</span>
+                  <Settings className="me-2 h-4 w-4" />
+                  <span>{t('navigation.settings')}</span>
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem onClick={handleLogout} className="text-red-600">
-                <LogOut className="mr-2 h-4 w-4" />
-                <span>تسجيل الخروج</span>
+                <LogOut className="me-2 h-4 w-4" />
+                <span>{t('navigation.logout')}</span>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -169,6 +162,7 @@ export default function Header({ className }: HeaderProps) {
             size="icon"
             className="md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={t('common.menu')}
           >
             {isMobileMenuOpen ? (
               <X className="h-5 w-5" />
@@ -186,21 +180,21 @@ export default function Header({ className }: HeaderProps) {
             {user?.role === 'admin' && (
               <Link
                 to="/employees"
-                className="flex items-center space-x-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Users className="h-4 w-4" />
-                <span>إدارة الموظفين</span>
+                <span>{t('navigation.employeeManagement')}</span>
               </Link>
             )}
             {user?.role === 'employee' && (
-              <Link 
-                to="/employee" 
-                className="flex items-center space-x-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              <Link
+                to="/employee"
+                className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <FileText className="h-4 w-4" />
-                <span>الاستطلاعات المخصصة</span>
+                <span>{t('navigation.assignedSurveys')}</span>
               </Link>
             )}
           </div>

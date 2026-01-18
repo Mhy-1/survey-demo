@@ -1,4 +1,5 @@
 import { useState, memo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { smartSearch } from '@/lib/smartSearch'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -57,6 +58,7 @@ function DataTable<T extends Record<string, any>>({
   onExport,
   className
 }: DataTableProps<T>) {
+  const { t } = useTranslation()
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedRows, setSelectedRows] = useState<T[]>([])
   const [currentPage, setCurrentPage] = useState(1)
@@ -117,26 +119,26 @@ function DataTable<T extends Record<string, any>>({
       <div className="flex items-center justify-between">
         {searchable && (
           <div className="relative flex-1 max-w-sm">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Search className="absolute start-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="البحث..."
+              placeholder={t('dataTable.search')}
               value={searchTerm}
               onChange={(e) => handleSearch(e.target.value)}
-              className="pl-10"
+              className="ps-10"
             />
           </div>
         )}
-        
-        <div className="flex items-center space-x-2">
+
+        <div className="flex items-center gap-2">
           {onExport && (
             <Button variant="outline" size="sm" onClick={onExport}>
-              <Download className="h-4 w-4 mr-2" />
-              تصدير
+              <Download className="h-4 w-4 me-2" />
+              {t('dataTable.export')}
             </Button>
           )}
           <Button variant="outline" size="sm">
-            <Filter className="h-4 w-4 mr-2" />
-            فلترة
+            <Filter className="h-4 w-4 me-2" />
+            {t('dataTable.filter')}
           </Button>
         </div>
       </div>
@@ -161,7 +163,7 @@ function DataTable<T extends Record<string, any>>({
                   onClick={() => column.sortable && handleSort(column.key)}
                   style={{ width: column.width }}
                 >
-                  <div className="flex items-center space-x-1">
+                  <div className="flex items-center gap-1">
                     <span>{column.title}</span>
                     {column.sortable && sortField === column.key && (
                       <span className="text-xs">
@@ -178,16 +180,16 @@ function DataTable<T extends Record<string, any>>({
             {loading ? (
               <TableRow>
                 <TableCell colSpan={columns.length + (selectable ? 2 : 1)} className="text-center py-8">
-                  <div className="flex items-center justify-center space-x-2">
+                  <div className="flex items-center justify-center gap-2">
                     <div className="animate-spin rounded-full h-4 w-4 border-2 border-muted border-t-primary"></div>
-                    <span>جاري التحميل...</span>
+                    <span>{t('dataTable.loading')}</span>
                   </div>
                 </TableCell>
               </TableRow>
             ) : currentData.length === 0 ? (
               <TableRow>
                 <TableCell colSpan={columns.length + (selectable ? 2 : 1)} className="text-center py-8">
-                  <div className="text-muted-foreground">لا توجد بيانات</div>
+                  <div className="text-muted-foreground">{t('dataTable.noData')}</div>
                 </TableCell>
               </TableRow>
             ) : (
@@ -215,7 +217,7 @@ function DataTable<T extends Record<string, any>>({
                     </TableCell>
                   ))}
                   <TableCell>
-                    <Button variant="ghost" size="icon">
+                    <Button variant="ghost" size="icon" aria-label={t('common.actions')}>
                       <MoreHorizontal className="h-4 w-4" />
                     </Button>
                   </TableCell>
@@ -230,25 +232,27 @@ function DataTable<T extends Record<string, any>>({
       {pagination && totalPages > 1 && (
         <div className="flex items-center justify-between">
           <div className="text-sm text-muted-foreground">
-            عرض {startIndex + 1} إلى {Math.min(endIndex, data.length)} من {data.length} عنصر
+            {t('dataTable.showing', { from: startIndex + 1, to: Math.min(endIndex, data.length), total: data.length })}
           </div>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center gap-2">
             <Button
               variant="outline"
               size="sm"
               onClick={() => setCurrentPage(currentPage - 1)}
               disabled={currentPage === 1}
+              aria-label="Previous page"
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
             <span className="text-sm">
-              صفحة {currentPage} من {totalPages}
+              {t('dataTable.page', { current: currentPage, total: totalPages })}
             </span>
             <Button
               variant="outline"
               size="sm"
               onClick={() => setCurrentPage(currentPage + 1)}
               disabled={currentPage === totalPages}
+              aria-label="Next page"
             >
               <ChevronRight className="h-4 w-4" />
             </Button>

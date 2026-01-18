@@ -329,16 +329,16 @@ export default function AdminDashboard() {
             {t('adminDashboard.subtitle')}
           </p>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center gap-2">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
                 disabled={selectedSurveys.length === 0}
               >
-                <Download className="h-4 w-4 mr-2" />
+                <Download className="h-4 w-4 me-2" />
                 {t('adminDashboard.buttons.export')}
-                <ChevronDown className="h-4 w-4 ml-2" />
+                <ChevronDown className="h-4 w-4 ms-2" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -347,9 +347,9 @@ export default function AdminDashboard() {
                 disabled={exportCSVMutation.isPending}
               >
                 {exportCSVMutation.isPending ? (
-                  <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                  <Loader2 className="h-4 w-4 me-2 animate-spin" />
                 ) : (
-                  <Download className="h-4 w-4 mr-2" />
+                  <Download className="h-4 w-4 me-2" />
                 )}
                 {t('adminDashboard.export.csv')}
               </DropdownMenuItem>
@@ -359,9 +359,9 @@ export default function AdminDashboard() {
                   disabled={exportExcelMutation.isPending}
                 >
                   {exportExcelMutation.isPending ? (
-                    <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                    <Loader2 className="h-4 w-4 me-2 animate-spin" />
                   ) : (
-                    <Download className="h-4 w-4 mr-2" />
+                    <Download className="h-4 w-4 me-2" />
                   )}
                   {t('adminDashboard.export.excel')}
                 </DropdownMenuItem>
@@ -371,9 +371,9 @@ export default function AdminDashboard() {
                 disabled={exportPDFMutation.isPending}
               >
                 {exportPDFMutation.isPending ? (
-                  <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                  <Loader2 className="h-4 w-4 me-2 animate-spin" />
                 ) : (
-                  <Download className="h-4 w-4 mr-2" />
+                  <Download className="h-4 w-4 me-2" />
                 )}
                 {t('adminDashboard.export.pdf')}
               </DropdownMenuItem>
@@ -386,9 +386,9 @@ export default function AdminDashboard() {
           </DropdownMenu>
           <Button onClick={handleCreateSurvey} disabled={createMutation.isPending}>
             {createMutation.isPending ? (
-              <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+              <Loader2 className="h-4 w-4 me-2 animate-spin" />
             ) : (
-              <Plus className="h-4 w-4 mr-2" />
+              <Plus className="h-4 w-4 me-2" />
             )}
             {createMutation.isPending ? t('adminDashboard.creating') : t('adminDashboard.newSurvey')}
           </Button>
@@ -403,12 +403,12 @@ export default function AdminDashboard() {
               <h3 className="font-medium">{t('adminDashboard.quickActions.title')}</h3>
               <p className="text-sm text-muted-foreground">{t('adminDashboard.quickActions.description')}</p>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center gap-2">
               <Button
                 variant="outline"
                 onClick={handleCreateSurvey}
                 disabled={createMutation.isPending}
-                className="flex items-center space-x-2"
+                className="flex items-center gap-2"
               >
                 {createMutation.isPending ? (
                   <Loader2 className="h-4 w-4 animate-spin" />
@@ -422,7 +422,7 @@ export default function AdminDashboard() {
                   <Button
                     variant="outline"
                     disabled={selectedSurveys.length === 0}
-                    className="flex items-center space-x-2"
+                    className="flex items-center gap-2"
                   >
                     <Download className="h-4 w-4" />
                     <span>{t('adminDashboard.buttons.export')}</span>
@@ -431,11 +431,11 @@ export default function AdminDashboard() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
                   <DropdownMenuItem onClick={() => handleExportData('csv')}>
-                    <Download className="h-4 w-4 mr-2" />
+                    <Download className="h-4 w-4 me-2" />
                     {t('adminDashboard.export.csv')}
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => handleExportData('pdf')}>
-                    <Download className="h-4 w-4 mr-2" />
+                    <Download className="h-4 w-4 me-2" />
                     {t('adminDashboard.export.pdf')}
                   </DropdownMenuItem>
                   {selectedSurveys.length > 0 && (
@@ -448,7 +448,7 @@ export default function AdminDashboard() {
               <Button
                 variant="outline"
                 onClick={() => setActiveTab('settings')}
-                className="flex items-center space-x-2"
+                className="flex items-center gap-2"
               >
                 <Target className="h-4 w-4" />
                 <span>{t('adminDashboard.buttons.advancedSettings')}</span>
@@ -475,7 +475,7 @@ export default function AdminDashboard() {
             <div className="mt-2 flex items-center text-sm">
               <TrendingUp className="h-4 w-4 text-green-600 mr-1" />
               <span className="text-green-600">+12%</span>
-              <span className="text-muted-foreground mr-2">{t('adminDashboard.stats.fromLastMonth')}</span>
+              <span className="text-muted-foreground ms-2">{t('adminDashboard.stats.fromLastMonth')}</span>
             </div>
           </CardContent>
         </Card>
@@ -512,7 +512,7 @@ export default function AdminDashboard() {
             <div className="mt-2 flex items-center text-sm">
               <TrendingUp className="h-4 w-4 text-green-600 mr-1" />
               <span className="text-green-600">+18%</span>
-              <span className="text-muted-foreground mr-2">{t('adminDashboard.stats.fromLastMonth')}</span>
+              <span className="text-muted-foreground ms-2">{t('adminDashboard.stats.fromLastMonth')}</span>
             </div>
           </CardContent>
         </Card>
@@ -531,7 +531,7 @@ export default function AdminDashboard() {
             <div className="mt-2 flex items-center text-sm">
               <TrendingUp className="h-4 w-4 text-green-600 mr-1" />
               <span className="text-green-600">+5%</span>
-              <span className="text-muted-foreground mr-2">{t('adminDashboard.stats.fromLastMonth')}</span>
+              <span className="text-muted-foreground ms-2">{t('adminDashboard.stats.fromLastMonth')}</span>
             </div>
           </CardContent>
         </Card>
@@ -582,7 +582,7 @@ export default function AdminDashboard() {
                 <div className="space-y-4">
                   {(Array.isArray(surveys) ? surveys : []).slice(0, 3).map((survey) => (
                     <div key={survey.id} className="flex items-center justify-between p-3 border rounded-lg">
-                      <div className="flex items-center space-x-3">
+                      <div className="flex items-center gap-3">
                         <div className="h-10 w-10 bg-primary/10 rounded-lg flex items-center justify-center">
                           <FileText className="h-5 w-5 text-primary" />
                         </div>
@@ -591,7 +591,7 @@ export default function AdminDashboard() {
                           <p className="text-sm text-muted-foreground">{survey.description}</p>
                         </div>
                       </div>
-                      <div className="flex items-center space-x-2">
+                      <div className="flex items-center gap-2">
                         <Badge className={getStatusColor(survey.status)}>
                           {getStatusText(survey.status)}
                         </Badge>
@@ -616,7 +616,7 @@ export default function AdminDashboard() {
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium">{t('adminDashboard.monthlyStats.newResponses')}</span>
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center gap-2">
                       <span className="text-lg font-bold">{stats.thisMonth}</span>
                       <Badge variant="secondary" className="text-green-600">
                         +{stats.thisMonth - stats.lastMonth}
@@ -625,7 +625,7 @@ export default function AdminDashboard() {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium">{t('adminDashboard.monthlyStats.activeSurveys')}</span>
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center gap-2">
                       <span className="text-lg font-bold">{stats.activeSurveys}</span>
                       <Badge variant="secondary" className="text-blue-600">
                         +2
@@ -634,7 +634,7 @@ export default function AdminDashboard() {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium">{t('adminDashboard.monthlyStats.completionRate')}</span>
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center gap-2">
                       <span className="text-lg font-bold">{stats.completionRate}%</span>
                       <Badge variant="secondary" className="text-green-600">
                         +5%
@@ -658,8 +658,8 @@ export default function AdminDashboard() {
                     {t('adminDashboard.surveys.description')}
                   </CardDescription>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <div className="flex items-center space-x-2">
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2">
                     <Checkbox
                       checked={selectedSurveys.length === filteredSurveys.length && filteredSurveys.length > 0}
                       onCheckedChange={handleSelectAllSurveys}
@@ -668,7 +668,7 @@ export default function AdminDashboard() {
                       {t('adminDashboard.surveys.selectAll')} ({selectedSurveys.length}/{filteredSurveys.length})
                     </span>
                   </div>
-                  <div className="flex items-center space-x-2">
+                  <div className="flex items-center gap-2">
                     <Input
                       placeholder={t('adminDashboard.surveys.searchPlaceholder')}
                       value={searchTerm}
@@ -708,7 +708,7 @@ export default function AdminDashboard() {
               <div className="space-y-4">
                 {filteredSurveys.map((survey) => (
                   <div key={survey.id} className="flex items-center justify-between p-4 border rounded-lg hover:bg-muted/50 transition-colors">
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center gap-4">
                       <Checkbox
                         checked={selectedSurveys.includes(survey.id)}
                         onCheckedChange={() => handleSelectSurvey(survey.id)}
@@ -730,22 +730,22 @@ export default function AdminDashboard() {
                         </div>
                         <p className="text-sm text-muted-foreground mb-2">{survey.description}</p>
                         <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-                          <div className="flex items-center space-x-1">
+                          <div className="flex items-center gap-1">
                             <Users className="h-4 w-4" />
                             <span>{survey.responses}/{survey.target} {t('adminDashboard.surveys.responses')}</span>
                           </div>
-                          <div className="flex items-center space-x-1">
+                          <div className="flex items-center gap-1">
                             <Calendar className="h-4 w-4" />
                             <span>{t('adminDashboard.surveys.createdOn')} {survey.created_at}</span>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center gap-2">
                       <Badge className={getStatusColor(survey.status)}>
                         {getStatusText(survey.status)}
                       </Badge>
-                      <div className="flex items-center space-x-1">
+                      <div className="flex items-center gap-1">
                         <Button
                           variant="ghost"
                           size="icon"
@@ -948,7 +948,7 @@ export default function AdminDashboard() {
                       <SelectContent>
                         {filteredSurveys.map((survey) => (
                           <SelectItem key={survey.id} value={survey.id}>
-                            <div className="flex items-center space-x-2">
+                            <div className="flex items-center gap-2">
                               <span>{survey.title}</span>
                               <Badge variant="outline" className="text-xs">
                                 {survey.type === 'internal' ? t('adminDashboard.surveyType.internal') : t('adminDashboard.surveyType.external')}

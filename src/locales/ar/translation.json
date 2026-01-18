@@ -209,6 +209,123 @@
     "search": "بحث",
     "filter": "تصفية",
     "export": "تصدير",
-    "import": "استيراد"
+    "import": "استيراد",
+    "menu": "القائمة",
+    "noData": "لا توجد بيانات",
+    "loading": "جاري التحميل...",
+    "actions": "إجراءات"
+  },
+
+  "footer": {
+    "copyright": "© م.مشاري دعجم",
+    "demoBadge": "نسخة تجريبية",
+    "allRightsReserved": "جميع الحقوق محفوظة"
+  },
+
+  "errors": {
+    "loadingFailed": "فشل التحميل",
+    "tryAgain": "إعادة المحاولة",
+    "unexpectedError": "حدث خطأ غير متوقع",
+    "errorMessage": "نعتذر عن الإزعاج. حدث خطأ أثناء تحميل هذا المحتوى.",
+    "tips": "نصائح لحل المشكلة:",
+    "refreshPage": "حاول تحديث الصفحة (F5)",
+    "clearCache": "امسح ذاكرة التخزين المؤقت للمتصفح",
+    "checkInternet": "تأكد من اتصالك بالإنترنت",
+    "contactSupport": "إذا استمرت المشكلة، اتصل بالدعم الفني",
+    "goHome": "العودة للرئيسية"
+  },
+
+  "navigation": {
+    "systemSettings": "إعدادات النظام",
+    "assignedSurveys": "الاستطلاعات المخصصة",
+    "employeeManagement": "إدارة الموظفين",
+    "profile": "الملف الشخصي",
+    "settings": "الإعدادات",
+    "logout": "تسجيل الخروج"
+  },
+
+  "roles": {
+    "admin": "مدير",
+    "manager": "مشرف",
+    "employee": "موظف",
+    "unknown": "غير محدد"
+  },
+
+  "dataTable": {
+    "search": "البحث...",
+    "export": "تصدير",
+    "filter": "فلترة",
+    "loading": "جاري التحميل...",
+    "noData": "لا توجد بيانات",
+    "showing": "عرض {{from}} إلى {{to}} من {{total}} عنصر",
+    "page": "صفحة {{current}} من {{total}}"
+  },
+
+  "login": {
+    "demoBanner": {
+      "title": "الوضع التجريبي",
+      "description": "هذه نسخة تجريبية ببيانات عينة. لا حاجة لخادم خلفي."
+    },
+    "title": "نظام استطلاعات AMSteel",
+    "subtitle": "نظام إدارة الاستطلاعات",
+    "welcome": "مرحباً",
+    "welcomeDescription": "قم بتسجيل الدخول ببيانات العرض التوضيحي لاستكشاف النظام",
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "password": "كلمة المرور",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+    "rememberMe": "تذكرني",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "signIn": "تسجيل الدخول",
+    "signingIn": "جاري التسجيل...",
+    "noAccount": "ليس لديك حساب؟",
+    "createAccount": "إنشاء حساب",
+    "demoCredentials": "بيانات العرض التوضيحي",
+    "adminAccount": "حساب المدير",
+    "employeeAccount": "حساب الموظف",
+    "use": "استخدم",
+    "footer": "نظام استطلاعات AMSteel - للعرض التوضيحي فقط",
+    "invalidCredentials": "بيانات غير صحيحة. يرجى استخدام بيانات العرض التوضيحي."
+  },
+
+  "employeeDashboard": {
+    "title": "لوحة التحكم - الموظف",
+    "subtitle": "الاستطلاعات المخصصة لك",
+    "viewReports": "عرض التقارير",
+    "stats": {
+      "assignedSurveys": "الاستطلاعات المخصصة",
+      "pending": "في الانتظار",
+      "completed": "المكتملة",
+      "outOf": "من أصل",
+      "overdue": "المتأخرة",
+      "needsCompletion": "تحتاج إلى إكمال",
+      "avgCompletionTime": "متوسط وقت الإكمال",
+      "perSurvey": "لكل استطلاع"
+    },
+    "assignedSurveys": {
+      "title": "الاستطلاعات المخصصة لك",
+      "description": "الاستطلاعات التي تحتاج إلى إكمالها"
+    },
+    "completedSurveys": {
+      "title": "الاستطلاعات المكتملة",
+      "description": "الاستطلاعات التي أكملتها مؤخراً"
+    },
+    "status": {
+      "completed": "مكتمل",
+      "inProgress": "قيد التنفيذ",
+      "notStarted": "لم يبدأ",
+      "overdue": "متأخر",
+      "unknown": "غير محدد"
+    },
+    "progress": "التقدم",
+    "deadline": "انتهاء",
+    "completedAt": "مكتمل في",
+    "startSurvey": "بدء الاستطلاع",
+    "continue": "متابعة",
+    "viewDetails": "عرض التفاصيل",
+    "noSurveys": {
+      "title": "لا توجد استطلاعات",
+      "description": "لا توجد استطلاعات مخصصة لك حالياً"
+    }
   }
 }
